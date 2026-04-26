@@ -1,58 +1,98 @@
 {
+  "sectionOrder": ["vibe", "menu", "deals", "location"],
   "location": {
-    "name": "Lake Plaza",
-    "address": "Karmiel, Israel",
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13405.518659178664!2d35.293427!3d32.915077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c4a04d1685cd1%3A0x6b107b328a27d2c3!2sKarmiel!5e0!3m2!1sen!2sil!4v1700000000000!5m2!1sen!2sil",
-    "directionsUrl": "https://www.google.com/maps/dir//Karmiel",
+    "name": "אזור תעשיה יקנעם",
+    "address": "אזור תעשיה יקנעם, ישראל",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.5!2d35.1!3d32.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c4b8e0!2zYXpvciBUYXNzaXlhIFlvcW5lYW0!5e0!3m2!1siw!2sil!4v1700000000000",
+    "directionsUrl": "https://www.google.com/maps/dir//אזור+תעשיה+יקנעם",
     "isOpen": true,
-    "hours": "Mon-Wed: 11:00 - 15:00"
+    "hours": "א׳-ה׳: 11:00–20:00"
   },
+  "vibe": {
+    "heading": "DOPAMINE",
+    "subheading": "מזון טוב = ויברציות טובות",
+    "body": "המבורגרים גורמה, ידניים ובאהבה — יקנעם",
+    "leftPhotos": [
+      { "url": "assets/burger.png", "caption": "הבורגר המושלם" },
+      { "url": "assets/salad.png",  "caption": "טריות מהטבע" }
+    ],
+    "rightPhotos": [
+      { "url": "assets/salad.png",  "caption": "ויברציות טובות" },
+      { "url": "assets/burger.png", "caption": "מוכנים לכם" }
+    ]
+  },
+  "deals": [
+    {
+      "id": "deal-classic",
+      "name": "עסקית קלאסיק",
+      "description": "המבורגר דופמין + צ'יפס + שתיה קלה",
+      "includes": ["המבורגר דופמין", "צ'יפס", "שתיה קלה"],
+      "price": 68,
+      "image": "assets/burger.png"
+    },
+    {
+      "id": "deal-double",
+      "name": "עסקית דאבל",
+      "description": "דאבל בורגר + צ'יפס גדול + שתיה",
+      "includes": ["דאבל בורגר", "צ'יפס גדול", "שתיה לבחירה"],
+      "price": 85,
+      "image": "assets/burger.png"
+    },
+    {
+      "id": "deal-vibe",
+      "name": "עסקית ויב",
+      "description": "המבורגר + סלט + שייק",
+      "includes": ["המבורגר דופמין", "סלט סרוטונין", "שייק ויברציות"],
+      "price": 79,
+      "image": "assets/salad.png"
+    }
+  ],
   "menu": [
     {
       "id": "dopamine-burger",
-      "name": "Dopamine Burger",
-      "description": "Smash patty, secret sauce, brioche",
-      "price": 12,
+      "name": "המבורגר דופמין",
+      "description": "פטי בקר דחוס, רוטב סודי, לחמניית בריוש",
+      "price": 52,
       "soldOut": false,
       "image": "assets/burger.png"
     },
     {
       "id": "serotonin-salad",
-      "name": "Serotonin Salad",
-      "description": "Citrus, herbs, crunchy seeds",
-      "price": 9,
+      "name": "סלט סרוטונין",
+      "description": "הדרים, עשבי תיבול, זרעים פריכים",
+      "price": 42,
       "soldOut": false,
       "image": "assets/salad.png"
     },
     {
       "id": "adrenaline-espresso",
-      "name": "Adrenaline Espresso",
-      "description": "Triple shot, single origin",
-      "price": 5,
+      "name": "אספרסו אדרנלין",
+      "description": "טריפל שוט, מקור יחיד",
+      "price": 22,
       "soldOut": false,
       "image": "assets/burger.png"
     },
     {
       "id": "dopamine-dessert",
-      "name": "Dopamine Dessert",
-      "description": "Brown butter, vanilla bean",
-      "price": 7,
+      "name": "קינוח דופמין",
+      "description": "חמאה שחומה, וניל אמיתי",
+      "price": 32,
       "soldOut": false,
       "image": "assets/burger.png"
     },
     {
       "id": "good-vibes-shake",
-      "name": "Good Vibes Shake",
-      "description": "Strawberry, banana, oat milk",
-      "price": 8,
+      "name": "שייק ויברציות",
+      "description": "תות, בננה, חלב שיבולת שועל",
+      "price": 36,
       "soldOut": false,
       "image": "assets/salad.png"
     },
     {
       "id": "oxytocin-taco",
-      "name": "Oxytocin Taco",
-      "description": "Slow-braised, lime crema",
-      "price": 6,
+      "name": "טאקו אוקסיטוצין",
+      "description": "בשר מבושל לאט, קרמת ליים",
+      "price": 28,
       "soldOut": false,
       "image": "assets/salad.png"
     }

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אירועים | דופמין פוד טראק</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/events.css">
+</head>
+<body>
+  <header class="main-header scrolled" id="navbar">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="nav-brand">DOPAMINE</a>
+        <div class="nav-links">
+          <a href="index.html#menu">תפריט</a>
+          <a href="index.html#location">מיקום</a>
+          <a href="events.html" style="color:var(--dopamine-pink)">אירועים</a>
+          <a href="admin.html">ניהול</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="events-hero">
+      <div class="events-hero-overlay"></div>
+      <div class="container events-hero-content">
+        <h1>הזמינו אותנו<br>לאירוע שלכם</h1>
+        <p>פוד טראק גורמה שמגיע אליכם — לכל אירוע, בכל מקום</p>
+        <a href="#event-form" class="btn btn--cta">השאירו פרטים</a>
+      </div>
+    </section>
+
+    <!-- Event Types -->
+    <section class="event-types-section">
+      <div class="container">
+        <h2 class="text-center">לאיזה אירוע?</h2>
+        <div class="event-types-grid">
+          <div class="event-type-card">
+            <div class="event-type-icon">🎂</div>
+            <h3>ימי הולדת</h3>
+            <p>נהפוך את יום ההולדת שלכם לחוויה בלתי נשכחת עם המבורגרים גורמה</p>
+          </div>
+          <div class="event-type-card">
+            <div class="event-type-icon">💼</div>
+            <h3>אירועי חברה</h3>
+            <p>כנסים, ימי גיבוש ואירועי לקוחות — אנחנו מגיעים עם הכל</p>
+          </div>
+          <div class="event-type-card">
+            <div class="event-type-icon">💍</div>
+            <h3>חתונות ואירועים</h3>
+            <p>קונספט ייחודי ובלתי שגרתי שיפתיע את האורחים שלכם</p>
+          </div>
+          <div class="event-type-card">
+            <div class="event-type-icon">🎓</div>
+            <h3>מסיבות סיום</h3>
+            <p>חגגו את ההישג עם אוכל שכולם ידברו עליו</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="event-form-section" id="event-form">
+      <div class="container">
+        <div class="event-form-wrapper">
+          <div class="event-form-info">
+            <h2>נשמח לשמוע מכם</h2>
+            <p>מלאו את הפרטים ונחזור אליכם תוך 24 שעות לתיאום פרטים נוספים.</p>
+            <ul class="event-perks">
+              <li>✅ שירות אישי ומותאם</li>
+              <li>✅ ציוד מקצועי מלא</li>
+              <li>✅ תפריט מותאם לאירוע</li>
+              <li>✅ ניסיון בעשרות אירועים</li>
+            </ul>
+          </div>
+          <form id="event-inquiry-form" class="event-form-card" novalidate>
+            <div class="form-group">
+              <label for="ev-name">שם מלא *</label>
+              <input type="text" id="ev-name" placeholder="ישראל ישראלי" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ev-phone">טלפון *</label>
+                <input type="tel" id="ev-phone" placeholder="050-0000000" required>
+              </div>
+              <div class="form-group">
+                <label for="ev-guests">מספר אורחים</label>
+                <input type="number" id="ev-guests" placeholder="100" min="10">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ev-type">סוג האירוע</label>
+                <select id="ev-type">
+                  <option value="">בחרו סוג</option>
+                  <option value="birthday">יום הולדת</option>
+                  <option value="corporate">אירוע חברה</option>
+                  <option value="wedding">חתונה</option>
+                  <option value="graduation">מסיבת סיום</option>
+                  <option value="other">אחר</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ev-date">תאריך משוער</label>
+                <input type="date" id="ev-date">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ev-message">הערות נוספות</label>
+              <textarea id="ev-message" rows="4" placeholder="ספרו לנו על האירוע..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--cta" style="width:100%">שלחו פרטים 🚀</button>
+            <p id="ev-success" style="display:none;text-align:center;color:var(--vintage-teal);font-weight:700;margin-top:1rem">
+              ✅ הפרטים נשלחו! נחזור אליכם בקרוב.
+            </p>
+            <p id="ev-error" style="display:none;text-align:center;color:var(--adrenaline-red);font-weight:700;margin-top:1rem"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">DOPAMINE FOOD TRUCK</div>
+      <p class="footer-sub">מזון טוב = ויברציות טובות | יקנעם</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/dopamine_van/" target="_blank">Instagram</a>
+        <a href="events.html">אירועים</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 דופמין פוד טראק. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/events.js"></script>
+</body>
+</html>

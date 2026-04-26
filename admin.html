@@ -1,101 +1,198 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ניהול | דופמין פוד טראק</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ניהול | דופמין</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/events.css">
 </head>
 <body>
-
   <header class="main-header scrolled" id="navbar">
-    <div class="container">
-      <nav>
-        <a href="index.html" class="nav-brand">DOPAMINE</a>
-        <div class="nav-links">
-          <a href="index.html">חזור לאתר</a>
-        </div>
-      </nav>
-    </div>
+    <div class="container"><nav>
+      <a href="index.html" class="nav-brand">DOPAMINE</a>
+      <div class="nav-links">
+        <a href="index.html">האתר</a>
+        <a href="events.html">אירועים</a>
+      </div>
+    </nav></div>
   </header>
 
   <main class="admin-dashboard container">
     <h1 class="text-center">לוח ניהול</h1>
-
     <div id="admin-status" class="admin-status"></div>
 
-    <!-- Location Panel -->
-    <section class="admin-panel">
-      <h2>הגדרות מיקום</h2>
-      <div class="form-row">
-        <div class="form-group">
-          <label>שם המיקום</label>
-          <input type="text" id="loc-name" placeholder="למשל: כיכר העיר כרמיאל">
-        </div>
-        <div class="form-group">
-          <label>שעות פעילות</label>
-          <input type="text" id="loc-hours" placeholder="למשל: א׳-ה׳ 11:00–20:00">
-        </div>
+    <!-- 1. Section Order -->
+    <section class="admin-panel" data-panel-id="section-order">
+      <div class="panel-header">
+        <h2>⬆️ סדר מקטעים באתר</h2>
+        <button class="panel-toggle-btn">−</button>
       </div>
-      <div class="form-group">
-        <label>קישור לניווט (Google Maps URL)</label>
-        <input type="text" id="loc-directions" placeholder="https://www.google.com/maps/dir//...">
+      <div class="panel-body">
+        <p style="margin-bottom:1rem;font-size:0.9rem;color:#555">לחצו על החיצים לשינוי סדר הופעת המקטעים בעמוד הראשי.</p>
+        <div class="section-order-list" id="section-order-list"></div>
+        <button class="btn btn--secondary" id="save-order-btn">שמור סדר</button>
       </div>
-      <div class="form-group">
-        <label>קוד הטמעת מפה (Embed URL)</label>
-        <input type="text" id="loc-embed" placeholder="https://www.google.com/maps/embed?pb=...">
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" id="loc-open">
-        <label for="loc-open">פעיל עכשיו</label>
-      </div>
-      <button class="btn btn--secondary" id="save-location-btn">שמור מיקום</button>
     </section>
 
-    <!-- Menu Panel -->
-    <section class="admin-panel">
-      <h2>ניהול תפריט</h2>
-      <div class="admin-menu-list" id="admin-menu-list">
-        <p>טוען...</p>
+    <!-- 2. Hero Text -->
+    <section class="admin-panel" data-panel-id="vibe-text">
+      <div class="panel-header">
+        <h2>✏️ טקסט ה-Hero</h2>
+        <button class="panel-toggle-btn">−</button>
       </div>
-
-      <div class="add-item-form">
-        <h3>הוספת מנה חדשה</h3>
+      <div class="panel-body">
         <div class="form-row">
           <div class="form-group">
-            <label>שם המנה</label>
-            <input type="text" id="new-item-name" placeholder="המבורגר דופמין">
+            <label>כותרת ראשית</label>
+            <input type="text" id="vibe-heading" placeholder="DOPAMINE">
           </div>
           <div class="form-group">
-            <label>מחיר (₪)</label>
-            <input type="number" id="new-item-price" placeholder="45">
+            <label>כותרת משנה</label>
+            <input type="text" id="vibe-subheading" placeholder="מזון טוב = ויברציות טובות">
           </div>
         </div>
         <div class="form-group">
-          <label>תיאור</label>
-          <input type="text" id="new-item-desc" placeholder="פטי בקר, רוטב בית, לחמניית בריוש">
+          <label>טקסט גוף</label>
+          <textarea id="vibe-body" placeholder="המבורגרים גורמה, ידניים ובאהבה — יקנעם"></textarea>
         </div>
-        <div class="form-group">
-          <label>כתובת תמונה (URL או assets/...)</label>
-          <input type="text" id="new-item-image" placeholder="assets/burger.png">
-        </div>
-        <button class="btn btn--cta" id="add-item-btn">הוסף מנה</button>
+        <button class="btn btn--secondary" id="save-vibe-text-btn">שמור טקסט</button>
       </div>
     </section>
 
-    <div class="text-center" style="margin-bottom: 2rem;">
-      <button class="btn" id="reset-data-btn" style="background:#555;color:#fff;border-color:#333">אפס לנתוני ברירת מחדל</button>
-    </div>
+    <!-- 3. Polaroid Left -->
+    <section class="admin-panel" data-panel-id="polaroid-left">
+      <div class="panel-header">
+        <h2>📸 פולרויד שמאל</h2>
+        <button class="panel-toggle-btn">−</button>
+      </div>
+      <div class="panel-body">
+        <div class="polaroid-list" id="vibe-left-list"></div>
+        <div class="add-item-form">
+          <h3>הוסף פולרויד</h3>
+          <div class="form-row">
+            <div class="form-group"><label>URL תמונה</label><input type="text" id="new-left-url" placeholder="assets/burger.png"></div>
+            <div class="form-group"><label>כיתוב</label><input type="text" id="new-left-caption" placeholder="הבורגר המושלם"></div>
+          </div>
+          <button class="btn btn--secondary" id="add-left-btn">הוסף פולרויד שמאל</button>
+        </div>
+      </div>
+    </section>
 
+    <!-- 4. Polaroid Right -->
+    <section class="admin-panel" data-panel-id="polaroid-right">
+      <div class="panel-header">
+        <h2>📸 פולרויד ימין</h2>
+        <button class="panel-toggle-btn">−</button>
+      </div>
+      <div class="panel-body">
+        <div class="polaroid-list" id="vibe-right-list"></div>
+        <div class="add-item-form">
+          <h3>הוסף פולרויד</h3>
+          <div class="form-row">
+            <div class="form-group"><label>URL תמונה</label><input type="text" id="new-right-url" placeholder="assets/salad.png"></div>
+            <div class="form-group"><label>כיתוב</label><input type="text" id="new-right-caption" placeholder="ויברציות טובות"></div>
+          </div>
+          <button class="btn btn--secondary" id="add-right-btn">הוסף פולרויד ימין</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Location -->
+    <section class="admin-panel" data-panel-id="location">
+      <div class="panel-header">
+        <h2>📍 מיקום</h2>
+        <button class="panel-toggle-btn">−</button>
+      </div>
+      <div class="panel-body">
+        <div class="form-row">
+          <div class="form-group"><label>שם המיקום</label><input type="text" id="loc-name"></div>
+          <div class="form-group"><label>שעות</label><input type="text" id="loc-hours"></div>
+        </div>
+        <div class="form-group"><label>קישור ניווט</label><input type="text" id="loc-directions"></div>
+        <div class="form-group"><label>Embed URL מפה</label><input type="text" id="loc-embed"></div>
+        <div class="form-group form-check">
+          <input type="checkbox" id="loc-open">
+          <label for="loc-open">פעיל עכשיו</label>
+        </div>
+        <button class="btn btn--secondary" id="save-location-btn">שמור מיקום</button>
+      </div>
+    </section>
+
+    <!-- 6. Menu -->
+    <section class="admin-panel" data-panel-id="menu">
+      <div class="panel-header">
+        <h2>🍔 ניהול תפריט</h2>
+        <button class="panel-toggle-btn">−</button>
+      </div>
+      <div class="panel-body">
+        <div class="admin-menu-list" id="admin-menu-list"><p>טוען...</p></div>
+        <div class="add-item-form">
+          <h3>הוספת מנה חדשה</h3>
+          <div class="form-row">
+            <div class="form-group"><label>שם</label><input type="text" id="new-item-name" placeholder="המבורגר דופמין"></div>
+            <div class="form-group"><label>מחיר (₪)</label><input type="number" id="new-item-price" placeholder="52"></div>
+          </div>
+          <div class="form-group"><label>תיאור</label><input type="text" id="new-item-desc" placeholder="פטי בקר דחוס, רוטב סודי"></div>
+          <div class="form-group"><label>URL תמונה</label><input type="text" id="new-item-image" placeholder="assets/burger.png"></div>
+          <button class="btn btn--cta" id="add-item-btn">הוסף מנה</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Deals -->
+    <section class="admin-panel" data-panel-id="deals">
+      <div class="panel-header">
+        <h2>🔥 עסקיות (עד 3)</h2>
+        <button class="panel-toggle-btn">−</button>
+      </div>
+      <div class="panel-body">
+        <p class="deals-count-note" id="deals-count-note">טוען...</p>
+        <div class="admin-menu-list" id="admin-deals-list"></div>
+        <div class="add-item-form" id="add-deal-form">
+          <h3>הוספת עסקית</h3>
+          <div class="form-row">
+            <div class="form-group"><label>שם</label><input type="text" id="new-deal-name" placeholder="עסקית קלאסיק"></div>
+            <div class="form-group"><label>מחיר (₪)</label><input type="number" id="new-deal-price" placeholder="68"></div>
+          </div>
+          <div class="form-group"><label>תיאור</label><input type="text" id="new-deal-desc" placeholder="המבורגר + צ׳יפס + שתיה"></div>
+          <div class="form-group"><label>מה כלול (הפרד בפסיקים)</label><input type="text" id="new-deal-includes" placeholder="המבורגר דופמין, צ׳יפס, שתיה קלה"></div>
+          <div class="form-group"><label>URL תמונה</label><input type="text" id="new-deal-image" placeholder="assets/burger.png"></div>
+          <button class="btn btn--cta" id="add-deal-btn">הוסף עסקית</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Events Inbox -->
+    <section class="admin-panel" data-panel-id="events-inbox">
+      <div class="panel-header">
+        <h2>🎉 פניות אירועים</h2>
+        <button class="panel-toggle-btn">−</button>
+      </div>
+      <div class="panel-body">
+        <p id="events-inbox-empty" style="color:#888">טוען פניות...</p>
+        <div style="overflow-x:auto">
+          <table class="events-table" id="events-table" style="display:none">
+            <thead>
+              <tr>
+                <th>שם</th><th>טלפון</th><th>סוג</th><th>תאריך</th><th>אורחים</th><th>הערות</th><th>פעולות</th>
+              </tr>
+            </thead>
+            <tbody id="events-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center" style="margin-bottom:3rem">
+      <button class="btn" id="reset-data-btn" style="background:#555;color:#fff;border-color:#333">אפס לברירת מחדל</button>
+    </div>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <p class="footer-copy">לוח ניהול — דופמין פוד טראק</p>
-    </div>
-  </footer>
+  <footer><div class="container footer-inner">
+    <p class="footer-copy">לוח ניהול — דופמין פוד טראק</p>
+  </div></footer>
 
   <script type="module" src="scripts/admin.js"></script>
 </body>
