@@ -1,0 +1,60 @@
+{
+  "location": {
+    "name": "Lake Plaza",
+    "address": "Karmiel, Israel",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13405.518659178664!2d35.293427!3d32.915077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c4a04d1685cd1%3A0x6b107b328a27d2c3!2sKarmiel!5e0!3m2!1sen!2sil!4v1700000000000!5m2!1sen!2sil",
+    "directionsUrl": "https://www.google.com/maps/dir//Karmiel",
+    "isOpen": true,
+    "hours": "Mon-Wed: 11:00 - 15:00"
+  },
+  "menu": [
+    {
+      "id": "dopamine-burger",
+      "name": "Dopamine Burger",
+      "description": "Smash patty, secret sauce, brioche",
+      "price": 12,
+      "soldOut": false,
+      "image": "assets/burger.png"
+    },
+    {
+      "id": "serotonin-salad",
+      "name": "Serotonin Salad",
+      "description": "Citrus, herbs, crunchy seeds",
+      "price": 9,
+      "soldOut": false,
+      "image": "assets/salad.png"
+    },
+    {
+      "id": "adrenaline-espresso",
+      "name": "Adrenaline Espresso",
+      "description": "Triple shot, single origin",
+      "price": 5,
+      "soldOut": false,
+      "image": "assets/burger.png"
+    },
+    {
+      "id": "dopamine-dessert",
+      "name": "Dopamine Dessert",
+      "description": "Brown butter, vanilla bean",
+      "price": 7,
+      "soldOut": false,
+      "image": "assets/burger.png"
+    },
+    {
+      "id": "good-vibes-shake",
+      "name": "Good Vibes Shake",
+      "description": "Strawberry, banana, oat milk",
+      "price": 8,
+      "soldOut": false,
+      "image": "assets/salad.png"
+    },
+    {
+      "id": "oxytocin-taco",
+      "name": "Oxytocin Taco",
+      "description": "Slow-braised, lime crema",
+      "price": 6,
+      "soldOut": false,
+      "image": "assets/salad.png"
+    }
+  ]
+}

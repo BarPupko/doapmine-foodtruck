@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ניהול | דופמין פוד טראק</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+  <header class="main-header scrolled" id="navbar">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="nav-brand">DOPAMINE</a>
+        <div class="nav-links">
+          <a href="index.html">חזור לאתר</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-dashboard container">
+    <h1 class="text-center">לוח ניהול</h1>
+
+    <div id="admin-status" class="admin-status"></div>
+
+    <!-- Location Panel -->
+    <section class="admin-panel">
+      <h2>הגדרות מיקום</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label>שם המיקום</label>
+          <input type="text" id="loc-name" placeholder="למשל: כיכר העיר כרמיאל">
+        </div>
+        <div class="form-group">
+          <label>שעות פעילות</label>
+          <input type="text" id="loc-hours" placeholder="למשל: א׳-ה׳ 11:00–20:00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>קישור לניווט (Google Maps URL)</label>
+        <input type="text" id="loc-directions" placeholder="https://www.google.com/maps/dir//...">
+      </div>
+      <div class="form-group">
+        <label>קוד הטמעת מפה (Embed URL)</label>
+        <input type="text" id="loc-embed" placeholder="https://www.google.com/maps/embed?pb=...">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" id="loc-open">
+        <label for="loc-open">פעיל עכשיו</label>
+      </div>
+      <button class="btn btn--secondary" id="save-location-btn">שמור מיקום</button>
+    </section>
+
+    <!-- Menu Panel -->
+    <section class="admin-panel">
+      <h2>ניהול תפריט</h2>
+      <div class="admin-menu-list" id="admin-menu-list">
+        <p>טוען...</p>
+      </div>
+
+      <div class="add-item-form">
+        <h3>הוספת מנה חדשה</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>שם המנה</label>
+            <input type="text" id="new-item-name" placeholder="המבורגר דופמין">
+          </div>
+          <div class="form-group">
+            <label>מחיר (₪)</label>
+            <input type="number" id="new-item-price" placeholder="45">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>תיאור</label>
+          <input type="text" id="new-item-desc" placeholder="פטי בקר, רוטב בית, לחמניית בריוש">
+        </div>
+        <div class="form-group">
+          <label>כתובת תמונה (URL או assets/...)</label>
+          <input type="text" id="new-item-image" placeholder="assets/burger.png">
+        </div>
+        <button class="btn btn--cta" id="add-item-btn">הוסף מנה</button>
+      </div>
+    </section>
+
+    <div class="text-center" style="margin-bottom: 2rem;">
+      <button class="btn" id="reset-data-btn" style="background:#555;color:#fff;border-color:#333">אפס לנתוני ברירת מחדל</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p class="footer-copy">לוח ניהול — דופמין פוד טראק</p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/admin.js"></script>
+</body>
+</html>
