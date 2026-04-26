@@ -28,22 +28,14 @@
 
   <main>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-        <h1 id="vibe-heading">DOPAMINE</h1>
-        <p class="hero-tagline" id="vibe-tagline">מזון טוב = ויברציות טובות</p>
-        <p class="hero-sub" id="vibe-body">המבורגרים גורמה, ידניים ובאהבה — יקנעם</p>
-        <a href="#menu" class="btn btn--cta">לתפריט</a>
-      </div>
-    </section>
-
-    <!-- Dynamic sections wrapper — order from Firebase -->
-    <div id="sections-wrapper">
-
-    <!-- Vibe / Polaroid Section -->
-    <section class="vibe-section" id="vibe">
+    <!-- Hero + Vibe (merged) -->
+    <section class="hero vibe-section" id="home">
       <div class="container">
+
+        <!-- Big Heading -->
+        <h1 class="hero-vibe-heading" id="vibe-heading">DOPAMINE</h1>
+
+        <!-- Polaroids + Center Text Row -->
         <div class="vibe-layout">
 
           <!-- Left Polaroids -->
@@ -52,8 +44,9 @@
           </div>
 
           <div class="vibe-center">
-            <p class="vibe-tagline" id="vibe-center-tagline">מזון טוב = ויברציות טובות</p>
-            <p class="vibe-body" id="vibe-center-body">המבורגרים גורמה, ידניים ובאהבה — יקנעם</p>
+            <p class="vibe-tagline" id="vibe-tagline">מזון טוב = ויברציות טובות</p>
+            <p class="vibe-body" id="vibe-body">המבורגרים גורמה, ידניים ובאהבה — יקנעם</p>
+            <a href="#menu" class="btn btn--cta">לתפריט</a>
           </div>
 
           <!-- Right Polaroids -->
@@ -64,6 +57,9 @@
         </div>
       </div>
     </section>
+
+    <!-- Dynamic sections wrapper — order from Firebase -->
+    <div id="sections-wrapper">
 
     <!-- Menu Section -->
     <section id="menu" class="menu-section">

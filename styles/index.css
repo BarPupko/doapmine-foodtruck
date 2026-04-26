@@ -88,23 +88,36 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .nav-links a { color: var(--cream-base); text-decoration: none; font-weight: 700; font-size: 0.95rem; }
 .nav-links a:hover { text-decoration: underline; }
 
-/* ---- HERO ---- */
-.hero {
-  background: var(--cream-base);
-  min-height: 70vh;
-  display: flex; align-items: center;
-  padding: 6rem 1.25rem 4rem;
+/* ---- HERO + VIBE (merged) ---- */
+.hero.vibe-section {
+  background: var(--deep-brown);
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+  position: relative;
   text-align: center;
 }
-.hero-inner { width: 100%; }
-.hero h1 {
-  font-size: clamp(3.5rem, 10vw, 7rem);
+
+/* Big heading above the polaroid row */
+.hero-vibe-heading {
+  font-size: clamp(3.5rem, 12vw, 8rem);
   line-height: 1;
-  text-shadow: 4px 4px 0 var(--dopamine-pink);
-  margin-bottom: 0.75rem;
+  color: var(--cream-base);
+  text-shadow: 5px 5px 0 var(--dopamine-pink);
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
 }
-.hero-tagline { font-size: clamp(1.2rem, 3vw, 1.7rem); font-weight: 700; color: var(--vintage-teal); margin-bottom: 0.5rem; }
-.hero-sub { font-size: 1rem; color: var(--teal-dark); margin-bottom: 2.5rem; opacity: 0.85; }
+
+/* Center column inside vibe-layout gets the CTA button */
+.hero.vibe-section .vibe-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero.vibe-section .vibe-center .btn--cta {
+  margin-top: 1.25rem;
+}
 
 /* ========================
    VIBE SECTION (Polaroid)
@@ -114,6 +127,11 @@ nav { display: flex; justify-content: space-between; align-items: center; }
   padding: 5rem 0;
   overflow: hidden;
   position: relative;
+}
+
+/* When used as the merged hero, override min-height */
+.hero.vibe-section {
+  padding-top: 6rem; /* account for nav */
 }
 
 .vibe-layout {

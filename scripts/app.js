@@ -59,13 +59,10 @@ function applyOrder(order) {
 // --- Vibe Section ---
 function renderVibe(vibe) {
   if (!vibe) return;
-  // Hero text (only set once — the hero section)
-  setEl('vibe-heading',       vibe.heading);
-  setEl('vibe-tagline',       vibe.subheading);
-  setEl('vibe-body',          vibe.body);
-  // Vibe section center (just tagline + body, NO duplicate heading)
-  setEl('vibe-center-tagline', vibe.subheading);
-  setEl('vibe-center-body',    vibe.body);
+  // Merged Hero+Vibe — single set of IDs
+  setEl('vibe-heading', vibe.heading);
+  setEl('vibe-tagline', vibe.subheading);
+  setEl('vibe-body',    vibe.body);
   // Polaroids
   renderPolaroids('vibe-photos-left',  toArr(vibe.leftPhotos));
   renderPolaroids('vibe-photos-right', toArr(vibe.rightPhotos));
