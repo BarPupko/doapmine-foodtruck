@@ -100,6 +100,17 @@ nav { display: flex; justify-content: space-between; align-items: center; flex-w
   .nav-brand { font-size: 1.1rem; }
 }
 
+@media (max-width: 400px) {
+  .hero-vibe-heading {
+    font-size: clamp(1.7rem, 10vw, 2.5rem);
+    letter-spacing: 0;
+  }
+  .vibe-polaroids-left .polaroid,
+  .vibe-polaroids-right .polaroid {
+    max-width: 100px;
+  }
+}
+
 /* ---- HERO + VIBE (merged) ---- */
 .hero.vibe-section {
   background: var(--deep-brown);
@@ -154,22 +165,56 @@ nav { display: flex; justify-content: space-between; align-items: center; flex-w
 }
 
 @media (max-width: 768px) {
-  /* On mobile: hide polaroids, show only center text full-width */
+
+  /* ── Heading: shrink to fit the viewport ── */
+  .hero-vibe-heading {
+    font-size: clamp(2rem, 11.5vw, 3.2rem);
+    letter-spacing: 0.01em;
+    margin-bottom: 1rem;
+  }
+
+  /* ── Layout: single column stack ── */
   .vibe-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
     text-align: center;
   }
-  .vibe-polaroids-left, .vibe-polaroids-right {
-    display: none; /* hide on mobile to avoid overflow */
+
+  /* Left polaroids appear ABOVE the center text */
+  .vibe-polaroids-left  { order: -1; }
+  .vibe-center          { order:  0; }
+  /* Right polaroids appear BELOW the center text */
+  .vibe-polaroids-right { order:  1; }
+
+  /* Show polaroids as a small centered row */
+  .vibe-polaroids-left,
+  .vibe-polaroids-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0;
   }
+
+  /* Only show the FIRST polaroid per side */
+  .vibe-polaroids-left  .polaroid:nth-child(n+2),
+  .vibe-polaroids-right .polaroid:nth-child(n+2) {
+    display: none;
+  }
+
+  /* Smaller polaroid on mobile */
+  .vibe-polaroids-left  .polaroid,
+  .vibe-polaroids-right .polaroid {
+    max-width: 130px;
+  }
+
   .vibe-center {
-    padding: 0 1.5rem;
-  }
-  .hero-vibe-heading {
-    font-size: clamp(3rem, 18vw, 5rem);
-    margin-bottom: 1.5rem;
+    padding: 0 1rem;
   }
 }
+
 
 /* Center text */
 .vibe-center {
