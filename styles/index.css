@@ -164,6 +164,7 @@ nav { display: flex; justify-content: space-between; align-items: center; flex-w
   gap: 2rem;
 }
 
+
 @media (max-width: 768px) {
 
   /* ── Heading: shrink to fit the viewport ── */
@@ -173,47 +174,58 @@ nav { display: flex; justify-content: space-between; align-items: center; flex-w
     margin-bottom: 1rem;
   }
 
-  /* ── Layout: single column stack ── */
+  /* ── Layout: center text full-width first, then all polaroids below ── */
   .vibe-layout {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
+    gap: 0;
   }
 
-  /* Left polaroids appear ABOVE the center text */
-  .vibe-polaroids-left  { order: -1; }
-  .vibe-center          { order:  0; }
-  /* Right polaroids appear BELOW the center text */
-  .vibe-polaroids-right { order:  1; }
+  /* Center text takes full width and comes first */
+  .vibe-center {
+    width: 100%;
+    order: 0;
+    padding: 0 1rem 2rem;
+  }
 
-  /* Show polaroids as a small centered row */
+  /* Both polaroid containers sit side-by-side below the button */
   .vibe-polaroids-left,
   .vibe-polaroids-right {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 0;
+    order: 1;
+    padding: 0.5rem 0 1rem;
+    /* no gap — use negative margin on each polaroid for overlap */
   }
 
-  /* Only show the FIRST polaroid per side */
-  .vibe-polaroids-left  .polaroid:nth-child(n+2),
-  .vibe-polaroids-right .polaroid:nth-child(n+2) {
-    display: none;
-  }
-
-  /* Smaller polaroid on mobile */
+  /* ALL polaroids visible, small, overlapping */
   .vibe-polaroids-left  .polaroid,
   .vibe-polaroids-right .polaroid {
-    max-width: 130px;
+    max-width: 95px;
+    margin-left: -22px;  /* creates the overlap */
+    transition: transform 0.25s ease, z-index 0s;
   }
 
-  .vibe-center {
-    padding: 0 1rem;
+  /* First polaroid in left group has no left indent */
+  .vibe-polaroids-left .polaroid:first-child {
+    margin-left: 0;
+  }
+
+  /* Small gap between the two groups (left-group & right-group) */
+  .vibe-polaroids-right .polaroid:first-child {
+    margin-left: 6px;
+  }
+
+  /* Hover: pull a polaroid out of the stack */
+  .vibe-polaroids-left  .polaroid:hover,
+  .vibe-polaroids-right .polaroid:hover {
+    transform: translateY(-12px) rotate(0deg) scale(1.12) !important;
+    z-index: 20;
   }
 }
+
 
 
 /* Center text */
